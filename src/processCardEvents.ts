@@ -22,8 +22,10 @@ type CardTransactionMapping = {
 export const processCardEvents = (cardEvents: CardEvent[]): CardTransactionMapping => {
 
 let output:CardTransactionMapping = {};
- 
-let arr = cardEvents.filter((e) => e.type === 'RESERVATION');
+
+let arr:CardEvent[] = [];
+
+arr = cardEvents.filter((e) => e.type === 'RESERVATION');
 
   for(let i of arr){
    
@@ -35,6 +37,8 @@ let arr = cardEvents.filter((e) => e.type === 'RESERVATION');
     }
       
   }
+
+
 
   return output as CardTransactionMapping
 }
